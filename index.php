@@ -8,7 +8,16 @@
 </head>
 <body>
     
-    
+    <h1>PHP Badwords</h1> 
+
+    <form action="result.php">
+
+        <input type="text" placeholder="Scrivi il Paragrafo da inviare" name="paragraph">
+        <input type="text" placeholder="Parola da Censurare" name="censure">
+
+        <input type="submit">
+
+    </form>
 
 </body>
 </html>
