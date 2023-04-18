@@ -7,6 +7,13 @@
     <title>Result</title>
 </head>
 <body style="text-align:center">
+
+<?php 
+
+$originalParagraph = $_GET["paragraph"];
+$censure = $_GET["censure"];
+
+?>
     
     <h1>Risultato iniziale</h1>
 
@@ -15,7 +22,7 @@
 
         <?php 
         
-        echo $_GET["paragraph"];
+        echo $originalParagraph;
 
         ?>
     </p>
@@ -27,7 +34,7 @@
         <strong>
             <?php 
             
-            echo str_word_count($_GET["paragraph"]);
+            echo str_word_count($originalParagraph);
 
             ?>
         </strong>
@@ -37,7 +44,7 @@
         <strong>
             <?php 
             
-            echo strlen($_GET["paragraph"]);
+            echo strlen($originalParagraph);
 
             ?>
         </strong>
@@ -56,9 +63,9 @@
 
         <?php 
 
-        $newParagraph = str_replace($_GET["censure"], "***", $_GET["paragraph"]);
+        $newParagraph = str_replace($censure, "***", $originalParagraph);
         
-        if($_GET["censure"] == null || $_GET["censure"] == "") {
+        if($censure == null || $censure == "") {
 
             echo "Uguale a quello di sopra, non c'è censura poichè avrai dimenticato la parola da inserire.";
             
@@ -76,7 +83,7 @@
         <strong>
             <?php 
             
-            if($_GET["censure"] == null || $_GET["censure"] == "") {
+            if($censure == null || $censure == "") {
 
                 echo "/";
                 
@@ -92,7 +99,7 @@
         <strong>
             <?php
 
-            if($_GET["censure"] == null || $_GET["censure"] == "") {
+            if($censure == null || $censure == "") {
 
                 echo "/";
 
@@ -105,7 +112,6 @@
         
         caratteri.
 
-        
     </p>
 
 </body>
